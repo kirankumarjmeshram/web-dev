@@ -2,7 +2,8 @@ import './App.css';
 import {useEffect, useState} from "react"
 
 function App() {
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]);
+  const [numbers, setNumbers] = useState([1,2,3,4,5,6,7,8,9,10]);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
     .then((response) => response.json())
@@ -15,6 +16,26 @@ function App() {
     } );
     console.log(filteredData);
   }
+const filterMap = () =>{
+  let numberLessThan5 = numbers
+  .filter((number)=>{
+    return number < 5;
+  }).map((number)=>{
+    return number*number;
+  })
+  setNumbers(numberLessThan5)
+}
+
+const mapFilter= () =>{
+  let numberSquare = numbers
+  .map((number)=>{
+    return number*number;
+  }).filter((number)=>{
+    return number <=5;
+  })
+  setNumbers(numberSquare)
+}
+
   return (
     <div className="App">
       <div>
@@ -29,7 +50,14 @@ function App() {
           </div>
         ))}
       </div>
+      <div>
+        {numbers.map((number)=>{
+          return <div>{number}</div>
+        })
+        }
+      </div>
       <button onClick={myData}>click me</button>
+      <button onClick={mapFilter}>mapFilter</button>
     </div>
   );
 }
