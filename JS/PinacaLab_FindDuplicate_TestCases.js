@@ -66,3 +66,31 @@ function testCheckCharTwice() {
   
   // Run the test cases
   testCheckCharTwice();
+
+  // coding
+  // fetch the data from https://dummyjson.com/products and show the thumbnil
+import {useEffect, useState} from 'react';
+import axios from 'axios';
+import React from "react";
+
+export default function App() {
+  const [products,setProducts] = useState([]);
+
+useEffect(()=>{
+  const getData = async() => {
+    const dataa = await axios.get('https://dummyjson.com/products');
+    console.log(dataa.data.products)
+    setProducts(dataa.data.products)
+ }
+ getData();
+}
+  , []);
+
+  return (
+    <div className="App">
+      <ul>
+        {products.map((product)=><li key={product.id}><img src={product.thumbnail } alt='na'/></li>)}
+      </ul>
+    </div>
+  );
+}
