@@ -4,7 +4,6 @@ const a = readline.createInterface({
     output:process.stdout,
 })
 function main() { 
-    let b;
    a.question("write str: ",(num)=>{
     console.log(num);
     a.close();
