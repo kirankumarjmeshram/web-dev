@@ -1,13 +1,15 @@
 import { useState } from 'react';
-import { Folder } from './component/Folder';
+import Folder from './component/Folder';
 import explorer from './data/folderData';
 
 function App() {
-  const [folderData, setFolderData] = useState([...explorer]);
+  const [folderData, setFolderData] = useState(explorer);
+  console.log(folderData)
   return (
+    </div >
     <div className="App">
-      <Folder folderDat /div>
-      );
+    </div>
+  );
 }
 
-      export default App;
+export default App;

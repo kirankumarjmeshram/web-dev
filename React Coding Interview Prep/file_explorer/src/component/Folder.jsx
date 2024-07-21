@@ -1,5 +1,7 @@
 import React from "react";
 
-export const Folder = () => {
+const Folder = () => {
   return <div>Folder</div>;
 };
+
+export default Folder;
