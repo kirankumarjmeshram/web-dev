@@ -4,10 +4,10 @@ import explorer from './data/folderData';
 
 function App() {
   const [folderData, setFolderData] = useState(explorer);
-  console.log(folderData)
+  // console.log(folderData)
   return (
-    </div >
     <div className="App">
+      <Folder explorer = {explorer} />
     </div>
   );
 }
